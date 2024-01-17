@@ -55,7 +55,7 @@ class CustomCell: UITableViewCell {
       myImageView.bottomAnchor.constraint(equalTo: self.contentView.layoutMarginsGuide.bottomAnchor),
       myImageView.leadingAnchor.constraint(equalTo: self.contentView.layoutMarginsGuide.leadingAnchor),
 
-      myImageView.heightAnchor.constraint(equalToConstant: 90),
+//      myImageView.heightAnchor.constraint(equalToConstant: 90),
       myImageView.widthAnchor.constraint(equalToConstant: 90),
 
       myLabel.leadingAnchor.constraint(equalTo: self.myImageView.trailingAnchor,constant: 16),
