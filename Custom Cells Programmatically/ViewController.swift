@@ -11,7 +11,7 @@ class ViewController: UIViewController {
 
 
   //MARK: - Variables
-  private let image : [UIImage] = [
+  private let images : [UIImage] = [
     UIImage(named: "1")!,
     UIImage(named: "2")!,
     UIImage(named: "3")!,
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     let tableView = UITableView()
     tableView.backgroundColor = .systemBackground
     tableView.allowsSelection = true
-    tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+    tableView.register(CustomCell.self, forCellReuseIdentifier: CustomCell.identifier)
 
 
     return tableView
@@ -70,6 +70,25 @@ class ViewController: UIViewController {
 
 }
 
+
+extension ViewController : UITableViewDelegate , UITableViewDataSource {
+
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return self.images.count
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.identifier, for: indexPath) as? CustomCell else {
+      fatalError("The TableView coult not dequeue a CustomCell in ViewController")
+    }
+    cell.textLabel?.text = indexPath.row.description
+    return cell
+  }
+  
+
+}
+
+
 #Preview {
   ViewControllerViewRepresentable()
 }
@@ -82,18 +101,4 @@ struct ViewControllerViewRepresentable: UIViewControllerRepresentable {
   func updateUIViewController(_ uiViewController: ViewController, context: Context) {
     // Bu fonksiyon, view controller'ı güncellemek için kullanılır.
   }
-}
-
-
-extension ViewController : UITableViewDelegate , UITableViewDataSource {
-
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    <#code#>
-  }
-  
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    <#code#>
-  }
-  
-
 }

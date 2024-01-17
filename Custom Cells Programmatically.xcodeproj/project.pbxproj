@@ -12,6 +12,7 @@
 		656262D32B5845940075A0F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656262D22B5845940075A0F5 /* ViewController.swift */; };
 		656262D82B5845960075A0F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 656262D72B5845960075A0F5 /* Assets.xcassets */; };
 		656262DB2B5845960075A0F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 656262D92B5845960075A0F5 /* LaunchScreen.storyboard */; };
+		656262E42B5874E90075A0F5 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656262E32B5874E90075A0F5 /* CustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		656262D72B5845960075A0F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		656262DA2B5845960075A0F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		656262DC2B5845960075A0F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		656262E32B5874E90075A0F5 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,23 @@
 		656262CD2B5845940075A0F5 /* Custom Cells Programmatically */ = {
 			isa = PBXGroup;
 			children = (
-				656262CE2B5845940075A0F5 /* AppDelegate.swift */,
-				656262D02B5845940075A0F5 /* SceneDelegate.swift */,
 				656262D22B5845940075A0F5 /* ViewController.swift */,
-				656262D72B5845960075A0F5 /* Assets.xcassets */,
-				656262D92B5845960075A0F5 /* LaunchScreen.storyboard */,
 				656262DC2B5845960075A0F5 /* Info.plist */,
+				656262E22B5874A90075A0F5 /* Supporting */,
+				656262E32B5874E90075A0F5 /* CustomCell.swift */,
 			);
 			path = "Custom Cells Programmatically";
+			sourceTree = "<group>";
+		};
+		656262E22B5874A90075A0F5 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				656262D72B5845960075A0F5 /* Assets.xcassets */,
+				656262D92B5845960075A0F5 /* LaunchScreen.storyboard */,
+				656262CE2B5845940075A0F5 /* AppDelegate.swift */,
+				656262D02B5845940075A0F5 /* SceneDelegate.swift */,
+			);
+			path = Supporting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +147,7 @@
 			files = (
 				656262D32B5845940075A0F5 /* ViewController.swift in Sources */,
 				656262CF2B5845940075A0F5 /* AppDelegate.swift in Sources */,
+				656262E42B5874E90075A0F5 /* CustomCell.swift in Sources */,
 				656262D12B5845940075A0F5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
