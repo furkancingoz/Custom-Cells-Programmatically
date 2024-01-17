@@ -37,6 +37,12 @@ class CustomCell: UITableViewCell {
     fatalError("init(coder:) has not been implemented")
   }
 
+  public func configure(with image: UIImage, and label: String) {
+    self.myLabel.text = label
+    self.myImageView.image = image
+  }
+
+
   private func setupUI() {
     self.contentView.addSubview(myImageView)
     self.contentView.addSubview(myLabel)
@@ -51,6 +57,11 @@ class CustomCell: UITableViewCell {
 
       myImageView.heightAnchor.constraint(equalToConstant: 90),
       myImageView.widthAnchor.constraint(equalToConstant: 90),
+
+      myLabel.leadingAnchor.constraint(equalTo: self.myImageView.trailingAnchor,constant: 16),
+      myLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor,constant: -12),
+      myLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor),
+      myLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
 
     ])
   }

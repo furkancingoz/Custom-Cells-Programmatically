@@ -27,7 +27,25 @@ class ViewController: UIViewController {
     UIImage(named: "13")!,
     UIImage(named: "14")!,
     UIImage(named: "15")!,
-    ]
+  ]
+
+  private let names = [
+    "App Clips",
+    "Car Play",
+    "Catalyst",
+    "Class Kit",
+    "Cloud Kit",
+    "Core ML",
+    "Healt Kit",
+    "Metal",
+    "SF Symbols",
+    "Siri",
+    "Sprite",
+    "Swift UI",
+    "Test Flight",
+    "Wallet",
+    "Widget",
+  ]
 
 
   //MARK: - UI Components
@@ -48,8 +66,8 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupUI()
-      self.tableView.delegate = self
-      self.tableView.dataSource = self
+    self.tableView.delegate = self
+    self.tableView.dataSource = self
   }
 
 
@@ -76,15 +94,18 @@ extension ViewController : UITableViewDelegate , UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return self.images.count
   }
-  
+
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.identifier, for: indexPath) as? CustomCell else {
       fatalError("The TableView coult not dequeue a CustomCell in ViewController")
     }
-    cell.textLabel?.text = indexPath.row.description
+
+    let image = self.images[indexPath.row]
+    let name = self.names[indexPath.row]
+    cell.configure(with: image, and: name)
     return cell
   }
-  
+
 
 }
 
